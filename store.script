@@ -1,0 +1,25 @@
+// Create a JavaScript object to represent user details
+const user = {
+  id: 1,
+  name: "John Doe",
+  email: "johndoe@example.com",
+  age: 30,
+  // Add other user details as needed
+};
+
+// Convert the object to a JSON string
+const userJSON = JSON.stringify(user);
+
+// Store the JSON string in local storage with a unique key
+localStorage.setItem("userDetails", userJSON);
+// Retrieve the JSON string from local storage
+const storedUserJSON = localStorage.getItem("userDetails");
+
+if (storedUserJSON) {
+  // Parse the JSON string to convert it back to an object
+  const storedUser = JSON.parse(storedUserJSON);
+
+  // You can now access the user details as an object
+  console.log(storedUser.name); // Output: John Doe
+  console.log(storedUser.email); // Output: johndoe@example.com
+}
